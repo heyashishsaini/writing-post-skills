@@ -5,15 +5,15 @@
     "url": "https://github.com/heyashishsaini"
   },
   "metadata": {
-    "description": "Skills for writing X and LinkedIn posts.",
-    "version": "1.0.0"
+    "description": "Skills for writing X posts, LinkedIn posts and Blog posts.",
+    "version": "1.1.0"
   },
   "plugins": [
     {
       "name": "writing-post-skills",
       "source": "./",
-      "description": "Write engaging X (Twitter) posts and threads and authentic LinkedIn posts, with hooks, formats, and ready-to-post drafts.",
-      "version": "1.0.0",
+      "description": "Write engaging X (Twitter) posts and threads, authentic LinkedIn posts and publish-ready blog posts, with hooks, formats, SEO structure and ready-to-post drafts.",
+      "version": "1.1.0",
       "author": {
         "name": "Ashish Kumar",
         "url": "https://github.com/heyashishsaini"
@@ -25,7 +25,10 @@
         "twitter",
         "social-media",
         "writing",
-        "threads"
+        "threads",
+        "blog",
+        "seo",
+        "content-writing"
       ]
     }
   ]
