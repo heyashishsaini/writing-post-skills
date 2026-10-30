@@ -1,7 +1,7 @@
 {
   "name": "writing-post-skills",
-  "version": "1.0.0",
-  "description": "Write engaging X (Twitter) posts and threads and authentic LinkedIn posts, with hooks, formats, and ready-to-post drafts.",
+  "version": "1.1.0",
+  "description": "Write engaging X (Twitter) posts and threads, authentic LinkedIn posts and publish-ready blog posts, with hooks, formats, SEO structure and ready-to-post drafts.",
   "author": {
     "name": "Ashish Kumar",
     "url": "https://github.com/heyashishsaini"
@@ -15,6 +15,9 @@
     "twitter",
     "social-media",
     "writing",
-    "threads"
+    "threads",
+    "blog",
+    "seo",
+    "content-writing"
   ]
 }
