@@ -1,6 +1,6 @@
 ---
 name: writing-post-skills
-description: Entry point for the writing-post-skills plugin, a set of skills for writing X (Twitter) posts, X threads and LinkedIn posts, and for researching current AI news to ground them. Use this whenever the user asks for a tweet, X post, thread, LinkedIn post, thought-leadership content, social content about AI, or "latest AI news", even if they don't name a skill. It routes the request to the right skill inside the skills/ folder and sets the order when more than one is needed.
+description: Entry point for the writing-post-skills plugin, a set of skills for writing X (Twitter) posts, X threads, LinkedIn posts and blog posts. Use this whenever the user asks for a tweet, X post, thread, LinkedIn post, blog post, article, thought-leadership content, or social content about AI, even if they don't name a skill. It routes the request to the right skill inside the skills/ folder and sets the order when more than one is needed.
 ---
 
 # writing-post-skills
@@ -11,31 +11,31 @@ This is the root skill for the plugin. It does not write posts itself. It decide
 
 | Skill | Path | Use it for |
 |-------|------|-----------|
-| `researching-ai-news` | `skills/researching-ai-news/SKILL.md` | Finding current, source-linked AI news with web search and fetch. No search MCP needed. |
 | `writing-linkedin-posts` | `skills/writing-linkedin-posts/SKILL.md` | Authentic LinkedIn posts: hooks, formats, engagement strategy. |
 | `writing-x-posts` | `skills/writing-x-posts/SKILL.md` | X posts and threads. Full Topic / Link / Freeform / Random workflow lives in `skills/writing-x-posts/references/x-content-manager.md`. |
+| `writing-blog-posts` | `skills/writing-blog-posts/SKILL.md` | Publish-ready blog posts and long-form articles: tutorials, listicles, opinion, case studies, explainers, comparisons, with title, meta description, slug and SEO structure. |
 
 ## Routing
 
 Read the matching SKILL.md **before** writing anything.
 
-1. **Request is about AI news, announcements or "what's new in AI"** → read `researching-ai-news`.
-2. **Request is for an X post, tweet or thread** → read `writing-x-posts`.
-3. **Request is for a LinkedIn post or professional thought-leadership content** → read `writing-linkedin-posts`.
-4. **Request is for both platforms** → read both writing skills and adapt the post per platform. Do not paste the same text into both.
-5. **Request is unclear about the platform** → ask once: X or LinkedIn?
+1. **Request is for an X post, tweet or thread** → read `writing-x-posts`.
+2. **Request is for a LinkedIn post or professional thought-leadership content** → read `writing-linkedin-posts`.
+3. **Request is for a blog post, article, long-form piece, newsletter essay, or a blog outline, intro, headline or SEO pass** → read `writing-blog-posts`.
+4. **Request is for more than one format** (for example a blog plus a thread, or both social platforms) → read each matching skill and adapt per format. Do not paste the same text into several formats. For blog-to-social repurposing, write the blog first, then adapt it.
+5. **Request is unclear about the format** → ask once: X, LinkedIn, or blog?
 
-## Combining skills
+## Current events and facts
 
-When the post is about AI news or any current event:
+When a post is about AI news, a product launch or any current event:
 
-1. Run `researching-ai-news` first.
-2. Pass only the facts it verified (with their sources) to the writing skill.
-3. Write the post with `writing-x-posts` and/or `writing-linkedin-posts`.
+1. Search the web first and open the official source (company blog, docs, announcement) to confirm the details.
+2. Use only facts you verified, and keep the source link.
+3. Write the post with `writing-x-posts`, `writing-linkedin-posts` and/or `writing-blog-posts`.
 
-Never add claims, numbers or quotes the research step did not confirm. If research finds nothing reliable, say so instead of filling the gap.
+Never add claims, numbers or quotes you could not confirm. If a search finds nothing reliable, say so instead of filling the gap.
 
-For posts that do not depend on current events (opinions, lessons learned, how-tos), skip research and go straight to the writing skill.
+For posts that do not depend on current events (opinions, lessons learned, how-tos), skip the search and go straight to the writing skill.
 
 ## Ground rules
 
@@ -53,7 +53,7 @@ writing-post-skills/
 │   └── marketplace.json
 ├── SKILL.md                      ← this file
 ├── skills/
-│   ├── researching-ai-news/
+│   ├── writing-blog-posts/
 │   ├── writing-linkedin-posts/
 │   └── writing-x-posts/
 ├── README.md
