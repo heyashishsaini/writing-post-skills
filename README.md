@@ -6,9 +6,10 @@
   <img alt="OpenAI Codex" src="https://img.shields.io/badge/OpenAI_Codex-compatible-412991?logo=openai&logoColor=white">
   <img alt="X" src="https://img.shields.io/badge/X-posts_%26_threads-000000?logo=x&logoColor=white">
   <img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-posts-0A66C2?logo=linkedin&logoColor=white">
+  <img alt="Blog" src="https://img.shields.io/badge/Blog-posts_%26_SEO-FF5722?logo=blogger&logoColor=white">
 </p>
 
-A plugin for writing **X (Twitter)** and **LinkedIn** posts, grounded in verified AI news. One plugin, three skills. Built for **Claude Code** and also usable with **Codex/ChatGPT**, since both read the open `SKILL.md` format.
+A plugin for writing **X (Twitter)** posts, **LinkedIn** posts and **blog posts**. One plugin, three skills. Built for **Claude Code** and also usable with **Codex/ChatGPT**, since both read the open `SKILL.md` format.
 
 ## Works with
 
@@ -22,17 +23,17 @@ A plugin for writing **X (Twitter)** and **LinkedIn** posts, grounded in verifie
 
 | | Skill | What it does |
 |---|-------|--------------|
-| 🔎 | **`researching-ai-news`** | Compiles current, source-linked AI news using the built-in web search and fetch tools. No search MCP needed. |
 | 💼 | **`writing-linkedin-posts`** | Writes authentic LinkedIn posts: hooks, formats, and engagement strategy. |
 | 🐦 | **`writing-x-posts`** | Writes X posts and threads. Full Topic / Link / Freeform / Random workflow in `references/x-content-manager.md`. |
+| ✍️ | **`writing-blog-posts`** | Writes publish-ready blog posts: tutorials, listicles, opinion, case studies, explainers, comparisons. Includes title options, meta description, slug and SEO checklist. |
 
 ### How they work together
 
-For posts about AI news, `researching-ai-news` runs first and the writing skills use only the facts it verified.
+For posts about news or any current event, the writing skills search the web first and use only the facts they verified. A finished blog post can then be repurposed into an X thread or a LinkedIn post.
 
 ```
-researching-ai-news ──┬──► writing-x-posts
-                      └──► writing-linkedin-posts
+blog post ──┬──► X thread
+            └──► LinkedIn post
 ```
 
 ## Install
@@ -54,7 +55,7 @@ git clone https://github.com/heyashishsaini/writing-post-skills.git
 
 ### OpenAI Codex
 
-Codex discovers skills from `.agents/skills` folders. Copy the three skill folders there:
+Codex discovers skills from `.agents/skills` folders. Copy the skill folders there:
 
 ```bash
 git clone https://github.com/heyashishsaini/writing-post-skills.git
@@ -86,7 +87,7 @@ Just ask in plain language. The right skill triggers automatically.
 |----------|-----------------|
 | ![X](https://img.shields.io/badge/X-000000?logo=x&logoColor=white) | "Write a tweet about the latest Anthropic announcement" · "Turn this link into a thread" · "Give me a random tweet for today" |
 | ![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white) | "Write a LinkedIn post about what I learned shipping my first skill" · "Make this draft less salesy" |
-| 🔎 News | "What's new in AI this week?" · "Latest updates from OpenAI and Google" |
+| ✍️ Blog | "Write a blog post on how to add a skill to a Claude Code plugin" · "Turn this thread into a blog post" · "Give me 3 title options and a meta description" |
 
 ## Repository structure
 
@@ -98,7 +99,7 @@ writing-post-skills/
 ├── assets/
 │   └── banner.svg
 ├── skills/
-│   ├── researching-ai-news/
+│   ├── writing-blog-posts/
 │   ├── writing-linkedin-posts/
 │   └── writing-x-posts/
 ├── docs/
