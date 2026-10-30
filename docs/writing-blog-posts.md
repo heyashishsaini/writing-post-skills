@@ -657,6 +657,59 @@ Title options: (1) How to Add a Skill to a Claude Code Plugin (recommended: dire
 
 ---
 
+# How to Add a Skill to a Claude Code Plugin
+
+You have a plugin that works, and now a task keeps coming up that it does not cover. A new skill fixes that without touching the rest. This guide walks through the five steps, from empty folder to a tested skill.
+
+## What you need
+
+A plugin repo with a `skills/` folder and Claude Code installed. This guide assumes a layout where each skill lives in its own folder under `skills/`.
+
+## Step 1: Create the skill folder
+
+Add a folder named after the skill, using lowercase and hyphens.
+
+```bash
+mkdir -p skills/writing-blog-posts
+```
+
+You should now see the new folder next to your existing skills.
+
+## Step 2: Write SKILL.md
+
+Create `SKILL.md` inside the folder. It starts with a short header containing the skill's `name` and `description`, followed by the instructions.
+
+The description matters most. It is what Claude reads to decide whether to use the skill, so say what the skill does and list the situations that should trigger it, including phrases a user might actually say.
+
+## Step 3: Add references only if you need them
+
+If the skill needs long material, such as templates or checklists, put it in a `references/` folder and point to it from `SKILL.md` with a note on when to read it. Keep the main file short so it loads quickly.
+
+## Step 4: Update your docs and manifest
+
+Add the skill to the README table and, if you keep keywords in your plugin manifest, add the new topic there so people can find it.
+
+## Step 5: Install locally and test
+
+Add your local clone as a marketplace and install the plugin, then ask for something the skill should handle.
+
+```bash
+/plugin marketplace add ./your-plugin-repo
+/plugin install your-plugin@your-plugin
+```
+
+If the skill does not trigger, the usual cause is a description that is too narrow. Add the phrases people really use and try again.
+
+## Next step
+
+Run three real prompts, note where the output disappoints, and tighten the instructions where it went wrong.
+
+---
+
+Why this works: the intro states the problem and the result, each step says what to do and what to expect, there is no padding, and the ending gives a concrete next action. It makes no claim the author could not support.
+
+---
+
 ## 4. Example revision note (draft feedback)
 
 Use this shape when the user supplies a draft.
